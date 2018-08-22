@@ -21,8 +21,7 @@ def relu(x):
 # Softmax:将所有节点映射到（0, 1）， 可以做多分类
 # 将比sigmoid，做了归一化处理
 def softmax(x):
-    expx = np.exp(x)
-    return [i/expx for i in expx]
+    return np.exp(x)/np.sum(np.exp(x), axis=0)
 
 
 
